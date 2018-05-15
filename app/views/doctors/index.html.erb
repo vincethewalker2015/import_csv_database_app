@@ -1,0 +1,38 @@
+<h1>Doctors</h1>
+<p>Find me in app/views/doctors/index.html.erb</p>
+
+<%= flash[:notice] %>
+  <table>
+    <thead>
+      <tr>
+        <th>CCG</th>
+        <th>Post Code</th>
+        <th>Practice Name</th>
+        <th>Address</th>
+        <th>List Size</th>
+        <th>Brick</th>
+        <th>Telephone</th
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+        <tr>
+          <td><%= doctor.ccg %></td>
+          <td><%= doctor.postcode %></td>
+          <td><%= doctor.practice_name%></td>
+          <td><%= doctor.address %></td>
+          <td><%= doctor.list_size %></td>
+          <td><%= doctor.brick %></td>
+          <td><%= doctor.telephone%></td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+<div>
+  
+  <h4>Import that Data!</h4>
+    <%= form_tag import_doctors_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV" %>
+    <% end %>
+</div>
