@@ -74,7 +74,7 @@ User.all
 
 There's just one last technicality to take care of. Our initial intent was to create a steps leaderboard, but the table data isn't sorted correctly. Luckily, one quick addition to our table view can fix that. Just change line 14 in app/views/users/index.html.erb from:  
 <% @users.each do |user| %>
-to
+to.
 
 <% @users.order("steps desc").each do |user| %>
 and everything should be working perfectly! Although it's not particularly beautiful, our final product accomplished the original intent from the user story. Moving forward, you should be much more comfortable integrating CSV into larger and more complex situations. 
